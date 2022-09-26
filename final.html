@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <link rel="stylesheet" href="./css/final.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="background">
+            <div id="information">
+                <button class="btn" id="btn-information">作品資訊</button>
+                <div id="cover"></div>
+                <div id="about">
+                    <h2>作品資訊</h2>
+                    <h3>簡介：</h3>
+                    <p>發想自系上課程中曾做過的生物繪圖，藉由在畫布上點擊的方式，讓使用者體驗不以筆畫，一「點」一「點」完成圖畫的樂趣。</p>
+                    <h3>功能說明：</h3>
+                    <div id="demo-container-box">
+                        <div id="brush-inf-container">
+                            <div id="brush-pic">
+                                <img src="./img/panel.png">
+                            </div>
+                            <div id="brush-inf">
+                                <p>
+                                    左側為筆刷形狀及尺寸的顯示面板，可提供筆刷的即時資訊。<br>
+                                    筆刷尺寸：<br>
+                                    可設定大小介於1-300的正整數，提供輸入框及滑桿兩種輸入方法。<br>
+                                    筆刷顏色：<br>
+                                    可利用瀏覽器內建的取色器選取筆刷顏色。<br>
+                                    筆刷形狀：<br>
+                                    目前提供圓形和正方形兩種點以供使用。<br>
+                                </p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/previous.png" class="img"></button>
+                                <p>：上一步</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：點擊後可恢復筆刷、移動、移除及填色的動作，但無法恢復清空。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/next.png" class="img"></button>
+                                <p>：下一步</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：點擊後可返回上一步造成的動作。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/cursor.png"
+                                        class="img width-75"></button>
+                                <p>：顯示游標</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：打開該功能後，當使用筆刷時游標也會一起顯示。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/brush-2.png"
+                                        class="img width-80"></button>
+                                <p>：筆刷</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：打開該功能後，於畫布上點擊時會建立新的點。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/move-3.png"
+                                        class="img width-80"></button>
+                                <p>：移動</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：打開該功能後，按住滑鼠可拖曳畫布上的點。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/remove-2.png"
+                                        class="img width-80"></button>
+                                <p>：移除</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：打開該功能後，點擊畫布上的點後可移除該點。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/color-3.png"
+                                        class="img width-80"></button>
+                                <p>：填色</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：打開該功能後，點擊畫布上的點可依目前的筆刷顏色進行填色。</p>
+                            </div>
+                        </div>
+                        <div class="demo-container">
+                            <div class="demo">
+                                <button class="btn-demo margin-5"><img src="./img/picker-2.png"
+                                        class="img width-80"></button>
+                                <p>：取色</p>
+                            </div>
+                            <div class="demo-description">
+                                <p>描述：打開該功能後，點擊畫布上的點可依點的顏色更換筆刷顏色。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="copyright">&copy;2020 前端程式設計 by Zheng-Xiang Ye</p>
+                    <button id="close-about"><img src="./img/close.png" alt="" id="close" class="img"></button>
+                </div>
+                <button class="btn" id="clear">清空</button>
+            </div>
+            <main id="main">
+                <div id="container-draw">
+                    <div id="panel">
+                        <div id="brush-container">
+                            <div id="brush-box">
+                                <div id="brush-size-box1">
+                                    <div id="brush-size-outer">
+                                        <div class="brush-size" id="size"></div>
+                                    </div>
+                                    <p id="brush-p">10</p>
+                                </div>
+                                <div id="brush-size-box2">
+                                    <div id="brush-input-box">
+                                        <p>筆刷尺寸：</p>
+                                        <input type="number" class="middle" id="brush" class="input" min="1" max="300"
+                                            step="1" value="10">
+                                        <input type="range" class="middle" id="brush-slider" min="1" max="300" step="1"
+                                            value="10">
+                                    </div>
+                                    <div id="brush-color-box">
+                                        <p>筆刷顏色：</p>
+                                        <input type="color" id="color-picker">
+                                    </div>
+                                    <div id="brush-shape-box">
+                                        <p>筆刷形狀：</p>
+                                        <button class="btn-function btn-on" id="circle">
+                                            <img src="./img/circle-1.png" class="img hidden" id="circle-1">
+                                            <img src="./img/circle-2.png" class="img" id="circle-2">
+                                        </button>
+                                        <button class="btn-function" id="square">
+                                            <img src="./img/square-1.png" class="img" id="square-1">
+                                            <img src="./img/square-2.png" class="img hidden" id="square-2">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="function">
+                            <p>功能列：</p>
+                            <div class="function-container">
+                                <button class="btn-function margin-5" id="previous">
+                                    <img src="./img/previous.png" class="img"></button>
+                                <button class="btn-function margin-5" id="next">
+                                    <img src="./img/next.png" class="img"></button>
+                                <button class="btn-function margin-5" id="cursor">
+                                    <img src="./img/cursor.png" class="img width-75"></button>
+                            </div>
+                            <div class="function-container">
+                                <button class="btn-function btn-on margin-5" id="btn-brush">
+                                    <img src="./img/brush-1.png" class="img width-80 hidden" id="brush-1">
+                                    <img src="./img/brush-2.png" class="img width-80" id="brush-2">
+                                </button>
+                                <button class="btn-function margin-5" id="move">
+                                    <img src="./img/move-1.png" class="img width-80" id="move-1">
+                                    <img src="./img/move-3.png" class="img width-80 hidden" id="move-2"></button>
+                                <button class="btn-function margin-5" id="remove">
+                                    <img src="./img/remove-1.png" class="img width-80" id="remove-1">
+                                    <img src="./img/remove-2.png" class="img width-80 hidden" id="remove-2">
+                                </button>
+                                <button class="btn-function margin-5" id="color">
+                                    <img src="./img/color-1.png" class="img width-80" id="color-1">
+                                    <img src="./img/color-3.png" class="img width-80 hidden" id="color-2">
+                                </button>
+                                <button class="btn-function margin-5" id="picker">
+                                    <img src="./img/picker-1.png" class="img width-80" id="picker-1">
+                                    <img src="./img/picker-2.png" class="img width-80 hidden" id="picker-2">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="draw-underlay">
+                        <div id="canvas">
+                            <div id="drawing"></div>
+                            <div class="brush-size" id="indicator"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/final.js"></script>
+    <script src="./js/random_dot.js"></script>
+</body>
+
+</html>
